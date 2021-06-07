@@ -19,6 +19,5 @@ Seastate = 0;        %Sea state value between 0 and 6
 % 4: Vertical Zigzag
 % 5: 3D Path Following w/ L1 Augmentation
 % 6: Custom
-ctrl_mode = 2;
-
+ctrl_mode = 3;
 ctrl_mode_param; % set mode parameters
