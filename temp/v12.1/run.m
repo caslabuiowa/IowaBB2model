@@ -19,12 +19,9 @@ Ba_0 = [0 0 0 0 0 0];       %iniial acceleration
 
 %% Maneuver parameters
 adap = 1;
-tgt_speed = Bv_0(1);
-tgt_depth = Bx_0(3);
-Cp = [0 -4000 -8000 -12000 -16000 ; 0 0 0 0 0 ; tgt_depth tgt_depth tgt_depth tgt_depth tgt_depth ];
-[~,N] = size(Cp);
-N = N-1;
-[tnodes,w,Dm] = BeBOT(N,Tf);
-Cp_prime = Cp*Dm;
+v_ref = Bv_0(1);
+z_ref = Bx_0(3);
+psi_ref = 0;
+
 
 
