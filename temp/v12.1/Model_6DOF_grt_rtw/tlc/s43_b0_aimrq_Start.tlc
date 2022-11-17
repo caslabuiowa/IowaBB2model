@@ -1,0 +1,59 @@
+%implements s43_b0_aimrq_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcSetupRuntimeResourcesFcnOfS38B0 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 0, 1, 5, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS38B1 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 1, 1, 5, 1)
+%assign tlcSetupRuntimeResourcesFcnOfS38B4 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 4, 1, 5, 2)
+%assign tlcSetupRuntimeResourcesFcnOfS38B8 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 8, 1, 5, 3)
+%assign tlcSetupRuntimeResourcesFcnOfS38B9 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 9, 1, 5, 4)
+%assign tlcSetupRuntimeResourcesFcnOfS38B11 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 11, 1, 5, 5)
+%assign tlcSetupRuntimeResourcesFcnOfS38B14 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 14, 1, 5, 6)
+%assign tlcSetupRuntimeResourcesFcnOfS38B177 = OpaqueTLCBlockFcn("SetupRuntimeResources", 38, 177, 1, 5, 7)
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B0)
+/* SetupRuntimeResources for Scope: '<Root>/BV' */
+%<tlcSetupRuntimeResourcesFcnOfS38B0>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B1)
+/* SetupRuntimeResources for Scope: '<Root>/BX' */
+%<tlcSetupRuntimeResourcesFcnOfS38B1>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B4)
+/* SetupRuntimeResources for Scope: '<Root>/Scope' */
+%<tlcSetupRuntimeResourcesFcnOfS38B4>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B8)
+/* SetupRuntimeResources for Scope: '<Root>/Scope1' */
+%<tlcSetupRuntimeResourcesFcnOfS38B8>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B9)
+/* SetupRuntimeResources for Scope: '<S1>/Scope' */
+%<tlcSetupRuntimeResourcesFcnOfS38B9>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B11)
+/* SetupRuntimeResources for Scope: '<S3>/Scope' incorporates:
+ *  Constant: '<S1>/Constant1'
+ */
+%<tlcSetupRuntimeResourcesFcnOfS38B11>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B14)
+/* SetupRuntimeResources for Scope: '<S3>/Scope1' */
+%<tlcSetupRuntimeResourcesFcnOfS38B14>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS38B177)
+/* SetupRuntimeResources for Scope: '<S68>/Scope' */
+%<tlcSetupRuntimeResourcesFcnOfS38B177>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 5, fcnProtoType)>
+%endfunction

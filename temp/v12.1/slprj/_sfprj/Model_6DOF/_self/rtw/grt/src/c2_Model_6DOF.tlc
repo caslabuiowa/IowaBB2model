@@ -1,0 +1,60 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   6 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "zerr_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:56-65"\
+    }\
+    ChartData {\
+      Name         "zerr_int_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:66-79"\
+    }\
+    ChartData {\
+      Name         "thetaerr_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:80-93"\
+    }\
+    ChartData {\
+      Name         "thetaerr_int_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:94-111"\
+    }\
+    ChartData {\
+      Name         "psierr_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:112-123"\
+    }\
+    ChartData {\
+      Name         "psierr_int_prev"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "Model_6DOF:32411:124-139"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

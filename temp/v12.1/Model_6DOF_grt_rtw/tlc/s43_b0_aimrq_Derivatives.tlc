@@ -1,0 +1,30 @@
+%implements s43_b0_aimrq_Derivatives "C"
+
+%function Derivatives(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+XDot_Model_6DOF_T *_rtXdot;
+int32_T i;
+%closefile localVarDecl
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+for (i = 0; i < 6; i++) {
+    /* {S!d562}Derivatives for Integrator: '<S65>/Integrator' */
+    _rtXdot->Integrator_CSTATE[i] = Model_6DOF_B.out[i];
+    /* {S!d564}Derivatives for Integrator: '<S64>/Integrator' */
+    _rtXdot->Integrator_CSTATE_h[i] = Model_6DOF_B.out_f[i];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedDerivativeLocalVars", localVarDecl)>
+%endfunction
+%function DerivativesFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Derivatives(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 9, fcnProtoType)>
+%endfunction

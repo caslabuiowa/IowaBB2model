@@ -1,0 +1,458 @@
+%implements s43_b0_aimrq_TLCInterface "C"
+
+%function getInputAddr_38_0_1_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_5_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_5_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_5_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_5_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_5_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_5_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_38_0_1_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_DW.BV_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_38_0_1_5_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_DW.BV_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_5_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_5_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_38_1_1_5_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_DW.BX_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_38_1_1_5_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_DW.BX_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_11_1_5_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_P.Constant1_Value"
+%endfunction
+
+%function getInput_38_11_1_5_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_P.Constant1_Value"
+%endfunction
+
+%function getInputAddr_38_14_1_5_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.dmasskg"
+%endfunction
+
+%function getInput_38_14_1_5_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.dmasskg"
+%endfunction
+
+%function getInputAddr_38_177_1_5_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch3"
+%endfunction
+
+%function getInput_38_177_1_5_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch3"
+%endfunction
+
+%function getInputAddr_38_177_1_5_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch1"
+%endfunction
+
+%function getInput_38_177_1_5_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch1"
+%endfunction
+
+%function getInputAddr_38_177_1_5_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch2"
+%endfunction
+
+%function getInput_38_177_1_5_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch2"
+%endfunction
+
+%function getInputAddr_38_177_1_5_7_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch4"
+%endfunction
+
+%function getInput_38_177_1_5_7_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch4"
+%endfunction
+
+%function getInputAddr_38_177_1_5_7_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch5"
+%endfunction
+
+%function getInput_38_177_1_5_7_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch5"
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_0_1_7_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_0_1_7_0_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Gain2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_38_0_1_7_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_DW.BV_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_38_0_1_7_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_DW.BV_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_1_1_7_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_1_1_7_1_5_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.Integrator_d" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_38_1_1_7_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_DW.BX_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_38_1_1_7_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_DW.BX_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_4_1_7_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(215, 0, "")> %% rtb_n
+
+%return "&rtb_n"
+%endfunction
+
+%function getInput_38_4_1_7_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(215, 0, "")> %% rtb_n
+
+%return "rtb_n"
+%endfunction
+
+%function getInputAddr_38_8_1_7_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(216, 0, "")> %% rtb_dX
+
+%return "&rtb_dX" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_8_1_7_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(216, 0, "")> %% rtb_dX
+
+%return "rtb_dX" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_9_1_7_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(216, 0, "")> %% rtb_dX
+
+%return "&rtb_dX" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_38_9_1_7_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(216, 0, "")> %% rtb_dX
+
+%return "rtb_dX" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_38_11_1_7_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_P.Constant1_Value"
+%endfunction
+
+%function getInput_38_11_1_7_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_P.Constant1_Value"
+%endfunction
+
+%function getInputAddr_38_14_1_7_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.dmasskg"
+%endfunction
+
+%function getInput_38_14_1_7_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.dmasskg"
+%endfunction
+
+%function getInputAddr_38_177_1_7_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch3"
+%endfunction
+
+%function getInput_38_177_1_7_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch3"
+%endfunction
+
+%function getInputAddr_38_177_1_7_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch1"
+%endfunction
+
+%function getInput_38_177_1_7_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch1"
+%endfunction
+
+%function getInputAddr_38_177_1_7_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch2"
+%endfunction
+
+%function getInput_38_177_1_7_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch2"
+%endfunction
+
+%function getInputAddr_38_177_1_7_7_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch4"
+%endfunction
+
+%function getInput_38_177_1_7_7_3_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch4"
+%endfunction
+
+%function getInputAddr_38_177_1_7_7_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&Model_6DOF_B.IPitch5"
+%endfunction
+
+%function getInput_38_177_1_7_7_4_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "Model_6DOF_B.IPitch5"
+%endfunction
+
