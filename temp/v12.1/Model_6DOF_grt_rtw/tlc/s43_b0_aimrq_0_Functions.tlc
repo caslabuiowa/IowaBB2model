@@ -1,0 +1,339 @@
+%implements s43_b0_aimrq_0_Functions "C"
+
+%function Model_6DOF_inv_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T b_x[9];
+real_T absx11;
+real_T absx21;
+real_T absx31;
+int32_T p1;
+int32_T p2;
+int32_T p3;
+memcpy(&b_x[0], &x[0], 9U * sizeof(real_T));
+p1 = 0;
+p2 = 3;
+p3 = 6;
+absx11 = fabs(x[0]);
+absx21 = fabs(x[1]);
+absx31 = fabs(x[2]);
+if ((absx21 > absx11) && (absx21 > absx31)) {
+    p1 = 3;
+    p2 = 0;
+    b_x[0] = x[1];
+    b_x[1] = x[0];
+    b_x[3] = x[4];
+    b_x[4] = x[3];
+    b_x[6] = x[7];
+    b_x[7] = x[6];
+} else if (absx31 > absx11) {
+    p1 = 6;
+    p3 = 0;
+    b_x[0] = x[2];
+    b_x[2] = x[0];
+    b_x[3] = x[5];
+    b_x[5] = x[3];
+    b_x[6] = x[8];
+    b_x[8] = x[6];
+}
+b_x[1] /= b_x[0];
+b_x[2] /= b_x[0];
+b_x[4] -= b_x[1] * b_x[3];
+b_x[5] -= b_x[2] * b_x[3];
+b_x[7] -= b_x[1] * b_x[6];
+b_x[8] -= b_x[2] * b_x[6];
+if (fabs(b_x[5]) > fabs(b_x[4])) {
+    int32_T itmp;
+    itmp = p2;
+    p2 = p3;
+    p3 = itmp;
+    absx11 = b_x[1];
+    b_x[1] = b_x[2];
+    b_x[2] = absx11;
+    absx11 = b_x[4];
+    b_x[4] = b_x[5];
+    b_x[5] = absx11;
+    absx11 = b_x[7];
+    b_x[7] = b_x[8];
+    b_x[8] = absx11;
+}
+b_x[5] /= b_x[4];
+b_x[8] -= b_x[5] * b_x[7];
+absx11 = (b_x[1] * b_x[5] - b_x[2]) / b_x[8];
+absx21 = -(b_x[7] * absx11 + b_x[1]) / b_x[4];
+y[p1] = ((1.0 - b_x[3] * absx21) - b_x[6] * absx11) / b_x[0];
+y[p1 + 1] = absx21;
+y[p1 + 2] = absx11;
+absx11 = -b_x[5] / b_x[8];
+absx21 = (1.0 - b_x[7] * absx11) / b_x[4];
+y[p2] = -(b_x[3] * absx21 + b_x[6] * absx11) / b_x[0];
+y[p2 + 1] = absx21;
+y[p2 + 2] = absx11;
+absx11 = 1.0 / b_x[8];
+absx21 = -b_x[7] * absx11 / b_x[4];
+y[p3] = -(b_x[3] * absx21 + b_x[6] * absx11) / b_x[0];
+y[p3 + 1] = absx21;
+y[p3 + 2] = absx11;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Model_6DOF_inv", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_inv"))
+%<SLibCG_AccessArg(0, 0, 2)>
+%endif
+%if SLibCG_ArgAccessed(0, 0, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Model_6DOF_inv", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_inv"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 0, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Model_6DOF_inv(\
+%assign comma = ""
+%<comma>const real_T x[9]\
+%assign comma = ", "
+%<comma>real_T y[9]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 0, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Model_6DOF_inv", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function Model_6DOF_emxInit_real_T_Fcn1(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+emxArray_real_T_Model_6DOF_T *emxArray;
+int32_T i;
+*pEmxArray = (emxArray_real_T_Model_6DOF_T *)malloc(sizeof(emxArray_real_T_Model_6DOF_T));
+emxArray = *pEmxArray;
+emxArray->data = (real_T *)NULL;
+emxArray->numDimensions = numDimensions;
+emxArray->size = (int32_T *)malloc(sizeof(int32_T) * numDimensions);
+emxArray->allocatedSize = 0;
+emxArray->canFreeData = true;
+for (i = 0; i < numDimensions; i++) {
+    emxArray->size[i] = 0;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Model_6DOF_emxInit_real_T", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_emxInit_real_T"))
+%<SLibCG_AccessArg(0, 1, 2)>
+%endif
+%if SLibCG_ArgAccessed(0, 1, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Model_6DOF_emxInit_real_T", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_emxInit_real_T"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 1, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Model_6DOF_emxInit_real_T(\
+%assign comma = ""
+%<comma>emxArray_real_T_Model_6DOF_T **pEmxArray\
+%assign comma = ", "
+%<comma>int32_T numDimensions\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 1, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Model_6DOF_emxInit_real_T", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function Model__emxEnsureCapacity_real_T_Fcn2(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T i;
+int32_T newNumel;
+void *newData;
+if (oldNumel < 0) {
+    oldNumel = 0;
+}
+newNumel = 1;
+for (i = 0; i < emxArray->numDimensions; i++) {
+    newNumel *= emxArray->size[i];
+}
+if (newNumel > emxArray->allocatedSize) {
+    i = emxArray->allocatedSize;
+    if (i < 16) {
+        i = 16;
+    }
+    while (i < newNumel) {
+        if (i > 1073741823) {
+            i = MAX_int32_T;
+        } else {
+            i <<= 1;
+        }
+    }
+    newData = calloc((uint32_T)i, sizeof(real_T));
+    if (emxArray->data != NULL) {
+        memcpy(newData, emxArray->data, sizeof(real_T) * oldNumel);
+        if (emxArray->canFreeData) {
+            free(emxArray->data);
+        }
+    }
+    emxArray->data = (real_T *)newData;
+    emxArray->allocatedSize = i;
+    emxArray->canFreeData = true;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Model__emxEnsureCapacity_real_T", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model__emxEnsureCapacity_real_T"))
+%<SLibCG_AccessArg(0, 2, 2)>
+%endif
+%if SLibCG_ArgAccessed(0, 2, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Model__emxEnsureCapacity_real_T", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model__emxEnsureCapacity_real_T"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 2, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Model__emxEnsureCapacity_real_T(\
+%assign comma = ""
+%<comma>emxArray_real_T_Model_6DOF_T *emxArray\
+%assign comma = ", "
+%<comma>int32_T oldNumel\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 2, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Model__emxEnsureCapacity_real_T", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function Model_6DOF_emxFree_real_T_Fcn3(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+if (*pEmxArray != (emxArray_real_T_Model_6DOF_T *)NULL) {
+    if (((*pEmxArray)->data != (real_T *)NULL) && (*pEmxArray)->canFreeData) {
+        free((*pEmxArray)->data);
+    }
+    free((*pEmxArray)->size);
+    free(*pEmxArray);
+    *pEmxArray = (emxArray_real_T_Model_6DOF_T *)NULL;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Model_6DOF_emxFree_real_T", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_emxFree_real_T"))
+%<SLibCG_AccessArg(0, 3, 1)>
+%endif
+%if SLibCG_ArgAccessed(0, 3, 1)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Model_6DOF_emxFree_real_T", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_emxFree_real_T"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 3, 1)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Model_6DOF_emxFree_real_T(\
+%assign comma = ""
+%<comma>emxArray_real_T_Model_6DOF_T **pEmxArray\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 3, 1)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Model_6DOF_emxFree_real_T", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function Model_6DOF_norm_Fcn4(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T absxk;
+real_T scale;
+real_T t;
+real_T y;
+scale = 3.3121686421112381E-170;
+absxk = fabs(x[0]);
+if (absxk > 3.3121686421112381E-170) {
+    y = 1.0;
+    scale = absxk;
+} else {
+    t = absxk / 3.3121686421112381E-170;
+    y = t * t;
+}
+absxk = fabs(x[1]);
+if (absxk > scale) {
+    t = scale / absxk;
+    y = y * t * t + 1.0;
+    scale = absxk;
+} else {
+    t = absxk / scale;
+    y += t * t;
+}
+absxk = fabs(x[2]);
+if (absxk > scale) {
+    t = scale / absxk;
+    y = y * t * t + 1.0;
+    scale = absxk;
+} else {
+    t = absxk / scale;
+    y += t * t;
+}
+return scale * sqrt(y);
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Model_6DOF_norm", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_norm"))
+%<SLibCG_AccessArg(0, 4, 1)>
+%endif
+%if SLibCG_ArgAccessed(0, 4, 1)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Model_6DOF_norm", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Model_6DOF_norm"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 4, 1)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static real_T Model_6DOF_norm(\
+%assign comma = ""
+%<comma>const real_T x[3]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 4, 1)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Model_6DOF_norm", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%return fcnBuff
+%endfunction
+

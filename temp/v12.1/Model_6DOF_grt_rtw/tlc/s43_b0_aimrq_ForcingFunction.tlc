@@ -1,0 +1,30 @@
+%implements s43_b0_aimrq_ForcingFunction "C"
+
+%function ForcingFunction(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+XDot_Model_6DOF_T *_rtXdot;
+int32_T i;
+%closefile localVarDecl
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+for (i = 0; i < 6; i++) {
+    /* {S!d566}ForcingFunction for Integrator: '<S65>/Integrator' */
+    _rtXdot->Integrator_CSTATE[i] = Model_6DOF_B.out[i];
+    /* {S!d568}ForcingFunction for Integrator: '<S64>/Integrator' */
+    _rtXdot->Integrator_CSTATE_h[i] = Model_6DOF_B.out_f[i];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedForcingFunctionLocalVars", localVarDecl)>
+%endfunction
+%function ForcingFunctionFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ForcingFunction(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 10, fcnProtoType)>
+%endfunction

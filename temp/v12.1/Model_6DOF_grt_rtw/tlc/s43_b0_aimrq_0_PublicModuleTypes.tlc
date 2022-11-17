@@ -1,0 +1,20 @@
+%implements s43_b0_aimrq_0_PublicModuleTypes "C"
+
+%function PublicModuleTypes(block) Output
+
+#ifndef struct_emxArray_real_T
+#define struct_emxArray_real_T
+struct emxArray_real_T
+{
+    real_T *data;
+    int32_T *size;
+    int32_T allocatedSize;
+    int32_T numDimensions;
+    boolean_T canFreeData;
+};
+#endif /* struct_emxArray_real_T */
+#ifndef typedef_emxArray_real_T_Model_6DOF_T
+#define typedef_emxArray_real_T_Model_6DOF_T
+typedef struct emxArray_real_T emxArray_real_T_Model_6DOF_T;
+#endif /* typedef_emxArray_real_T_Model_6DOF_T */
+%endfunction

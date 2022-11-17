@@ -12,13 +12,13 @@ Seastate = 0;        %Sea state value between 0 and 6
 
 
 %% Initial conditions
-Bx_0 = [0 0 -20 0 0 0];    %initial displcement
+Bx_0 = [0 0 -60 0 0 0];    %initial displcement
 Bv_0 = [-5.14444 0 0 0 0 0];      %initial velocity
 Ba_0 = [0 0 0 0 0 0];       %iniial acceleration
 
 
 %% Maneuver parameters
-adap = 1;
+adap = 0;
 v_ref = Bv_0(1);
 z_ref = Bx_0(3);
 psi_ref = 0;

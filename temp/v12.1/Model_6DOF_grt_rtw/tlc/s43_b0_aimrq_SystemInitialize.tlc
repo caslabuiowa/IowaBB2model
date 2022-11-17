@@ -1,0 +1,59 @@
+%implements s43_b0_aimrq_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T i;
+%closefile localVarDecl
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* {S!d18}InitializeConditions for UnitDelay: '<S86>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE = Model_6DOF_P.DelayInput2_InitialCondition;
+/* {S!d20}InitializeConditions for UnitDelay: '<S84>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_o = Model_6DOF_P.DelayInput2_InitialCondition_c;
+/* {S!d22}InitializeConditions for UnitDelay: '<S72>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_a = Model_6DOF_P.DelayInput2_InitialCondition_n;
+/* {S!d24}InitializeConditions for UnitDelay: '<S73>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_i = Model_6DOF_P.DelayInput2_InitialCondition_g;
+/* {S!d26}InitializeConditions for UnitDelay: '<S74>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_f = Model_6DOF_P.DelayInput2_InitialCondition_m;
+/* {S!d28}InitializeConditions for UnitDelay: '<S75>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_g = Model_6DOF_P.DelayInput2_InitialCondition_j;
+/* {S!d30}InitializeConditions for UnitDelay: '<S76>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_j = Model_6DOF_P.DelayInput2_InitialCondition_jw;
+for (i = 0; i < 6; i++) {
+    /* {S!d32}InitializeConditions for Integrator: '<S65>/Integrator' */
+    Model_6DOF_X.Integrator_CSTATE[i] = Model_6DOF_P.Bv_0[i];
+    /* {S!d34}InitializeConditions for Integrator: '<S64>/Integrator' */
+    Model_6DOF_X.Integrator_CSTATE_h[i] = Model_6DOF_P.Bx_0[i];
+    /* {S!d36}InitializeConditions for Memory: '<S65>/Memory1' */
+    Model_6DOF_DW.Memory1_PreviousInput[i] = Model_6DOF_P.Ba_0[i];
+}
+/* {S!d38}InitializeConditions for Derivative: '<S15>/Derivative1' */
+Model_6DOF_DW.TimeStampA = %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>;
+Model_6DOF_DW.TimeStampB = %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>;
+/* {S!d40}InitializeConditions for UnitDelay: '<S82>/Delay Input2' */
+Model_6DOF_DW.DelayInput2_DSTATE_m = Model_6DOF_P.DelayInput2_InitialCondition_e;
+/* {S!d42}SystemInitialize for MATLAB Function: '<S1>/pf_controller' */
+Model_6DOF_DW.zerr_prev = 0.0;
+Model_6DOF_DW.zerr_int_prev = 0.0;
+Model_6DOF_DW.thetaerr_prev = 0.0;
+Model_6DOF_DW.thetaerr_int_prev = 0.0;
+Model_6DOF_DW.psierr_prev = 0.0;
+Model_6DOF_DW.psierr_int_prev = 0.0;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 6, fcnProtoType)>
+%endfunction
